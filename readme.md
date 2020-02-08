@@ -6,13 +6,6 @@ __Notice__: Current only [Papermc](http://papermc.io) Server supported.
 ## Installation
 
 ```xml
-<pluginRepository>
- <id>sonatype</id>
- <url>https://oss.sonatype.org/content/groups/public/</url>
-</pluginRepository>
-```
-
-```xml
 <plugin>
     <groupId>de.garrus.maven</groupId>
     <artifactId>minecraft-server-plugin</artifactId>
