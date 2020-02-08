@@ -175,6 +175,8 @@ public class InstallMojo extends AbstractMojo {
 
     /**
      * get the download url from the papermc.io api server
+     *
+     * @return the downlaod Url from the papermc Server Jar
      */
     public URL getPaperServerDownload() {
         try {
