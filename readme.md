@@ -9,7 +9,7 @@ __Notice__: Current only [Papermc](http://papermc.io) Server supported.
 <plugin>
     <groupId>de.garrus.maven</groupId>
     <artifactId>minecraft-server-plugin</artifactId>
-    <version>1.0</version>
+    <version>1.0.1</version>
     <configuration>
         <serverVersion>1.15.2</serverVersion>
         <createEula>true</createEula>
