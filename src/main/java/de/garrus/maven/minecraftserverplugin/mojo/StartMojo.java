@@ -34,10 +34,12 @@ public class StartMojo extends AbstractMojo {
     @Parameter(name = "skipPluginCopy",defaultValue = "false")
     private boolean skipPluginCopy;
 
-    private File serverFile = new File(serverFolder, "server.jar");
+    private File serverFile;
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
+        serverFile =  new File(serverFolder, "server.jar");
+
         if (serverFile.exists()) {
 
             if (!skipPluginCopy) {

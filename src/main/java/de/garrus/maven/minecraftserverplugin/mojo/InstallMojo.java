@@ -64,11 +64,12 @@ public class InstallMojo extends AbstractMojo {
     private boolean cleanPluginFolder = false;
 
 
-    private File serverFile = new File(serverFolder, "server.jar");
+    private File serverFile;
 
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
+        serverFile = new File(serverFolder, "server.jar");
 
         if (reinstallServer) {
             cleanServerFolder();
