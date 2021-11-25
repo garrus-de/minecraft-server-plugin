@@ -1,6 +1,7 @@
 package de.garrus.maven.minecraftserverplugin.mojo;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import de.garrus.maven.minecraftserverplugin.ServerType;
 import org.apache.commons.io.FileUtils;
@@ -15,7 +16,7 @@ import java.net.URL;
 
 @Mojo(name = "server-install", requiresOnline = true)
 public class InstallMojo extends AbstractMojo {
-    private static final String PAPER_API = "https://papermc.io/api/v1/paper/";
+    private static final String PAPER_API = "https://papermc.io/api/v2/projects/paper/versions/";
 
     /**
      * The Server type (PAPER,SPIGOT,BUKKIT)
@@ -185,9 +186,17 @@ public class InstallMojo extends AbstractMojo {
             JsonObject versionJson = new Gson().fromJson(new InputStreamReader(paperApiURL.openStream()), JsonObject.class);
 
             if (versionJson.has("builds")) {
-                String buildVersion = versionJson.get("builds").getAsJsonObject().get("latest").getAsString();
-
-                return new URL(PAPER_API + serverVersion + "/" + buildVersion + "/download");
+                // Store arr, save on some memory;
+                JsonArray arr = versionJson.get("builds").getAsJsonArray();
+                
+                // Find latest build, from arr.size-1
+                String buildVersion = arr.get(arr.size()-1).toString();
+                
+                // Show us where the jar is coming from
+                System.out.println("Getting jar from: "+PAPER_API + serverVersion + "/builds/" + buildVersion + "/downloads/"+"paper-"+serverVersion+"-"+buildVersion+".jar");
+                
+                // Return jar url and do work
+                return new URL(PAPER_API + serverVersion + "/builds/" + buildVersion + "/downloads/"+"paper-"+serverVersion+"-"+buildVersion+".jar");
             } else {
                 getLog().error("Can't find the build version in the api json");
                 return null;

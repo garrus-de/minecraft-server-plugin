@@ -7,10 +7,10 @@
     <groupId>de.garrus.maven</groupId>
     <artifactId>minecraft-server-plugin</artifactId>
     <packaging>maven-plugin</packaging>
-    <version>1.0.1</version>
+    <version>1.0.3</version>
     <name>minecraft-server-launcher</name>
     <description>Maven Plugin to launch an Server for Plugin Development.</description>
-    <url>https://github.com/MEGarrusVakarian/minecraft-server-plugin</url>
+    <url>https://github.com/garrus-de/minecraft-server-plugin/</url>
 
     <developers>
         <developer>
@@ -24,15 +24,15 @@
     <licenses>
         <license>
             <name>The MIT License (MIT)</name>
-            <url>hhttp://opensource.org/licenses/MIT</url>
+            <url>https://opensource.org/licenses/MIT</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
 
     <scm>
-        <connection>scm:git:git://git@github.com:MEGarrusVakarian/minecraft-server-plugin.git</connection>
-        <developerConnection>scm:git:git@github.com:MEGarrusVakarian/minecraft-server-plugin.git</developerConnection>
-        <url>https://github.com/MEGarrusVakarian/minecraft-server-plugin</url>
+        <connection>scm:git:git@github.com:garrus-de/minecraft-server-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:garrus-de/minecraft-server-plugin.git</developerConnection>
+        <url>https://github.com/garrus-de/minecraft-server-plugin/</url>
     </scm>
 
     <properties>
@@ -44,12 +44,13 @@
         <maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
         <maven-gpg-plugin.verion>1.5</maven-gpg-plugin.verion>
         <nexus-staging-maven-plugin.version>1.6.7</nexus-staging-maven-plugin.version>
+        <maven.compiler.plugin>3.8.1</maven.compiler.plugin>
 
         <!--Dependency Versions-->
         <maven.version>3.6.0</maven.version>
         <maven.compiler.plugin>3.8.1</maven.compiler.plugin>
-        <gson.version>2.8.6</gson.version>
-        <commons-io.version>2.6</commons-io.version>
+        <gson.version>2.8.9</gson.version>
+        <commons-io.version>2.7</commons-io.version>
     </properties>
 
     <dependencies>

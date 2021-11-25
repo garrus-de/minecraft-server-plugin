@@ -11,6 +11,8 @@ import org.apache.maven.plugins.annotations.Parameter;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Mojo(name = "server-start")
 public class StartMojo extends AbstractMojo {
@@ -31,14 +33,17 @@ public class StartMojo extends AbstractMojo {
     @Parameter(name = "targetFolder", readonly = true, defaultValue = "${project.build.directory}")
     private File targetFolder;
 
-    @Parameter(name = "skipPluginCopy",defaultValue = "false")
+    @Parameter(name = "skipPluginCopy", defaultValue = "false")
     private boolean skipPluginCopy;
+
+    @Parameter(name = "gui", defaultValue = "false")
+    private boolean gui;
 
     private File serverFile;
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
-        serverFile =  new File(serverFolder, "server.jar");
+        serverFile = new File(serverFolder, "server.jar");
 
         if (serverFile.exists()) {
 
@@ -72,8 +77,15 @@ public class StartMojo extends AbstractMojo {
      * start the Spigot/Paper/Bukkit server as {@link Process} form maven
      */
     private void startServer() {
+        List<String> command = new ArrayList<>();
+        command.add("java");
+        command.add("-jar");
+        command.add("server.jar");
+        if (!gui) {
+            command.add("nogui");
+        }
         try {
-            ProcessBuilder processBuilder = new ProcessBuilder("java", "-jar", "server.jar", "nogui");
+            ProcessBuilder processBuilder = new ProcessBuilder(command);
             processBuilder.directory(serverFolder);
 
             processBuilder.redirectOutput(ProcessBuilder.Redirect.INHERIT);
