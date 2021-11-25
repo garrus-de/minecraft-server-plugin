@@ -10,7 +10,7 @@
     <version>1.0.3-SNAPSHOT</version>
     <name>minecraft-server-launcher</name>
     <description>Maven Plugin to launch an Server for Plugin Development.</description>
-    <url>https://github.com/MEGarrusVakarian/minecraft-server-plugin</url>
+    <url>https://github.com/garrus-de/minecraft-server-plugin/</url>
 
     <developers>
         <developer>
@@ -24,15 +24,15 @@
     <licenses>
         <license>
             <name>The MIT License (MIT)</name>
-            <url>hhttp://opensource.org/licenses/MIT</url>
+            <url>https://opensource.org/licenses/MIT</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
 
     <scm>
-        <connection>scm:git:git://git@github.com:MEGarrusVakarian/minecraft-server-plugin.git</connection>
-        <developerConnection>scm:git:git@github.com:MEGarrusVakarian/minecraft-server-plugin.git</developerConnection>
-        <url>https://github.com/MEGarrusVakarian/minecraft-server-plugin</url>
+        <connection>scm:git:git@github.com:garrus-de/minecraft-server-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:garrus-de/minecraft-server-plugin.git</developerConnection>
+        <url>https://github.com/garrus-de/minecraft-server-plugin/</url>
     </scm>
 
     <properties>
