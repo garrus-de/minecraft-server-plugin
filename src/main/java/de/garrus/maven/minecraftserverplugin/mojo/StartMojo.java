@@ -39,6 +39,9 @@ public class StartMojo extends AbstractMojo {
     @Parameter(name = "gui", defaultValue = "false")
     private boolean gui;
 
+    @Parameter(name = "debug", defaultValue = "true")
+    private boolean debug;
+
     private File serverFile;
 
     @Override
@@ -79,6 +82,9 @@ public class StartMojo extends AbstractMojo {
     private void startServer() {
         List<String> command = new ArrayList<>();
         command.add("java");
+        if (debug) {
+            command.add("-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005");
+        }
         command.add("-jar");
         command.add("server.jar");
         if (!gui) {
