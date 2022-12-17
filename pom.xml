@@ -19,6 +19,11 @@
             <url>https://github.com/MEGarrusVakarian</url>
             <email>info@garrus.de</email>
         </developer>
+        <developer>
+            <id>mimo</id>
+            <name>Mimovnik</name>
+            <url>https://github.com/Mimovnik</url>
+        </developer>
     </developers>
 
     <licenses>
